@@ -1,44 +1,22 @@
-# Proyek ML: Prediksi Rating IMDb Top 1000
+# 🎬 IMDb Rating Prediction (End-to-End Machine Learning)
 
-## Deskripsi
-Membangun model regresi untuk memprediksi rating film IMDb
-berdasarkan runtime, tahun rilis, skor Metacritic, pendapatan kotor, dan genre.
+Proyek Machine Learning ini bertujuan untuk memprediksi rating film IMDb Top 1000 berdasarkan fitur seperti durasi, tahun rilis, skor Metacritic, pendapatan kotor (gross), dan genre. 
 
-## Dataset
-- Sumber: https://github.com/lilswapnil/bert-imdb-scraper
-- Jumlah: 1000 film × 16 kolom
+Proyek ini telah dikembangkan dari sekadar eksperimen *Jupyter Notebook* menjadi **Aplikasi Web interaktif (End-to-End)** yang siap digunakan.
 
-## Metode
-1. Data cleaning (Runtime, Gross, Meta_score)
-2. Multi-label encoding untuk Genre
-3. Train-test split 80:20
-4. Model: Linear Regression, Random Forest, Gradient Boosting
-5. Evaluasi: RMSE, MAE, R², Cross-Validation 5-fold
+![Tampilan Web UI](screenshot.png)
+*(Tampilan antarmuka Web UI modern dengan Dark Mode)*
 
-## Hasil
-| Model | RMSE | MAE | R² |
-|-------|------|-----|-----|
-| Linear Regression | 0.2510 | 0.2108 | 0.0173 |
-| Random Forest | 0.2314 | 0.1854 | 0.1650 |
-| Gradient Boosting | 0.2380 | 0.1960 | 0.1165 |
+## 🚀 Fitur Utama
+1. **Machine Learning Model:** Menggunakan algoritma `RandomForestRegressor` dengan RMSE terbaik (~0.2314).
+2. **REST API:** Dibangun menggunakan Flask untuk menerima *request* JSON dan mengembalikan hasil prediksi.
+3. **Web UI Modern:** Antarmuka pengguna interaktif menggunakan HTML, CSS (Glassmorphism/Dark Mode), dan JavaScript Fetch API.
 
-## Cara Menjalankan
-```bash
-pip install -r requirements.txt
-jupyter notebook Notebooks/analysis.ipynb
-
-## Kesimpulan
-
-1. Model terbaik berdasarkan RMSE adalah Random Forest dengan RMSE = 0.2314.
-2. Fitur paling berpengaruh terhadap prediksi rating adalah 
-   **Meta_score**, **Gross**, dan **Runtime**.
-3. Scatter plot aktual vs prediksi menunjukkan model cukup baik dalam mengikuti
-   tren, meskipun prediksi cenderung mengumpul di rentang 7.6–8.4.
-4. Keterbatasan: dataset hanya 1000 film, tidak representatif untuk seluruh film IMDb.
-
-## Author
-
-**Nama:** RIZKY SAPUTRA
-**NIM:** 2410140283
-**Mata Kuliah:** Machine Learning
-**Universitas:** Universitas Pamulang
+## 📂 Struktur Proyek
+```text
+├── data/                  # Dataset IMDb (CSV)
+├── model/                 # Artefak model (.pkl) dan script training
+├── templates/             # Folder untuk file HTML (index.html)
+├── app.py                 # File utama Flask API & Web Server
+├── requirements.txt       # Daftar library Python yang dibutuhkan
+└── README.md              # Dokumentasi proyek
