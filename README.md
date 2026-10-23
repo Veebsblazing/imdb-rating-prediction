@@ -4,7 +4,7 @@ Proyek Machine Learning ini bertujuan untuk memprediksi rating film IMDb Top 100
 
 Proyek ini telah dikembangkan dari sekadar eksperimen *Jupyter Notebook* menjadi **Aplikasi Web interaktif (End-to-End)** yang siap digunakan.
 
-![Tampilan Web UI](screenshot.png)
+![Tampilan Web UI](demo.png)
 *(Tampilan antarmuka Web UI modern dengan Dark Mode)*
 
 ## 🚀 Fitur Utama
